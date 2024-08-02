@@ -127,16 +127,15 @@ export function ImageCropper({
               "hover:cursor-pointer rounded w-full h-full overflow-hidden outline-offset-2 outline-gray-300 outline hover:outline-gray-400",
               getAspectRatioClass(ratio)
             )}
+            onClick={() => setDialogOpen(true)}
           >
-            <DialogTrigger asChild>
-              <Image
-                src={croppedImage ? croppedImage : selectedFile?.preview}
-                alt="Selected Image"
-                width={1000}
-                height={1000}
-                className={cn("size-full", getAspectRatioClass(ratio))}
-              />
-            </DialogTrigger>
+            <Image
+              src={croppedImage ? croppedImage : selectedFile?.preview}
+              alt="Selected Image"
+              width={1000}
+              height={1000}
+              className={cn("size-full", getAspectRatioClass(ratio))}
+            />
           </div>
         ) : (
           <div
